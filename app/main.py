@@ -12,6 +12,6 @@ def main():
 @app.post("/upload_image")
 async def upload(file: UploadFile = File(...)) -> List[str]:
   pre_image = await file.read()
-  item = []
+  item = ["로지드정", "메가베스틴정", "베아투스정", "덱시네정", "아세펜정"]
   return item
 
