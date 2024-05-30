@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY ./app /code/app
 
 # Command to run the FastAPI app
-CMD ["uvicorn", "main:app"]
+CMD ["uvicorn", "app.main:app"]
