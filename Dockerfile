@@ -7,7 +7,7 @@ FROM python:3.9
 WORKDIR /code
 
 # Install dependencies
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
