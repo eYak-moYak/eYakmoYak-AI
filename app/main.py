@@ -1,4 +1,5 @@
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
 from typing import Any, List
@@ -6,6 +7,18 @@ from PIL import Image
 from io import BytesIO
 
 app = FastAPI()
+
+origins = [
+  "http://localhost:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["GET, POST"],
+    allow_headers=["*"],
+    max_age=3600,
+)
 
 @app.get("/")
 def main():
